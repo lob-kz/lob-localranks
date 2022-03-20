@@ -23,9 +23,9 @@ public Plugin myinfo =
 bool gB_GOKZProfile;
 Database gH_DB = null;
 
-#include "lob-profile/sql.sp"
-#include "lob-profile/helpers.sp"
-#include "lob-profile/profile.sp"
+#include "lob-localranks/sql.sp"
+#include "lob-localranks/helpers.sp"
+#include "lob-localranks/profile.sp"
 
 
 
@@ -33,7 +33,7 @@ Database gH_DB = null;
 
 public void OnPluginStart()
 {
-	LoadTranslations("lob-profile.phrases");
+	LoadTranslations("lob-localranks.phrases");
 	RegisterCommands();
 }
 
