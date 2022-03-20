@@ -1,5 +1,67 @@
 "Phrases"
 {
+	"Chat - Player Not Found"
+	{
+		"#format"	"{1:s}"
+		"en"		"{grey}Your search for player '{default}{1}{grey}' returned no results."
+		"chi"		"{grey}你搜寻的玩家 '{default}{1}{grey}' 并不存在."
+		"ru"		"{grey}Ваш поиск по игроку '{default}{1}{grey}' не дал результатов."
+	}
+	"Chat - No Maps Completed"
+	{
+		"#format"	"{1:s}"
+		"en"		"{lime}{1} {grey}has not completed any map."
+	}
+	"Chat - No Maps Completed (PRO)"
+	{
+		"#format"	"{1:s}"
+		"en"		"{lime}{1} {grey}has not completed any map {blue}PRO{grey}."
+	}
+	"Chat - All Maps Completed"
+	{
+		"#format"	"{1:s}"
+		"en"		"{lime}{1} {grey}has completed all maps."
+	}
+	"Chat - All Maps Completed (PRO)"
+	{
+		"#format"	"{1:s}"
+		"en"		"{lime}{1} {grey}has completed all maps {blue}PRO{grey}."
+	}
+
+
+	"Player - ?"
+	{
+		"#format"	"{1:s}"
+		"en"		"Player - {1}"
+	}
+	"Mode - ?"
+	{
+		"#format"	"{1:s}"
+		"en"		"Mode - {1}"
+	}
+	"Map Completion"
+	{
+		"en"		"Map Completion"
+	}
+	"Completed Maps"
+	{
+		"en"		"Completed Maps"
+	}
+	"Completed Maps (PRO)"
+	{
+		"en"		"Completed Maps (PRO)"
+	}
+	"Uncompleted Maps"
+	{
+		"en"		"Uncompleted Maps"
+	}
+	"Uncompleted Maps (PRO)"
+	{
+		"en"		"Uncompleted Maps (PRO)"
+	}
+
+
+	// =====[ PROFILE ]=====
 	"Profile - Player Not Found"
 	{
 		// Your search for player 'Bill' returned with no results.
