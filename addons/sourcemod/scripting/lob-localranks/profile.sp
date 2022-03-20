@@ -95,7 +95,7 @@ public void DB_TxnSuccess_OpenProfile_FindPlayer(Handle db, DataPack data, int n
 
 	if (SQL_GetRowCount(results[0]) == 0)
 	{
-		GOKZ_PrintToChat(client, true, "%t", "Profile - Player Not Found", playerSearch);
+		GOKZ_PrintToChat(client, true, "%t", "Chat - Player Not Found", playerSearch);
 		return;
 	}
 	else if (SQL_FetchRow(results[0]))
@@ -118,30 +118,30 @@ static void ProfileMenuSetTitle(int client, Menu menu)
 	float mapsCompletedProPercent = 100.0 * (profileMapsCompletedPro[client] / float(profileMapsTotal[client]));
 
 	menu.SetTitle("%T\n%T\n \n%T\n%T\n \n%T\n%T\n ", 
-		"Profile - Player", client, profileAlias[client],
-		"Profile - From", client, profileCountry[client],
-		"Profile - First Seen", client, profileCreatedDate[client],
-		"Profile - Last Seen", client, profileLastPlayedDate[client],
-		"Profile - Completion", client, profileMapsCompletedNub[client], profileMapsTotal[client], mapsCompletedNubPercent,
-		"Profile - Completion PRO", client, profileMapsCompletedPro[client], profileMapsTotal[client], mapsCompletedProPercent);
+		"Player - ?", client, profileAlias[client],
+		"From - ?", client, profileCountry[client],
+		"First Seen - ?", client, profileCreatedDate[client],
+		"Last Seen - ?", client, profileLastPlayedDate[client],
+		"Completion - ?", client, profileMapsCompletedNub[client], profileMapsTotal[client], mapsCompletedNubPercent,
+		"Completion PRO - ?", client, profileMapsCompletedPro[client], profileMapsTotal[client], mapsCompletedProPercent);
 }
 
 static void ProfileMenuAddItems(int client, Menu menu)
 {
 	char buffer[64];
 
-	FormatEx(buffer, sizeof(buffer), "%T", "Profile - Completed Maps", client);
+	FormatEx(buffer, sizeof(buffer), "%T", "Completed Maps", client);
 	menu.AddItem("", buffer);
-	FormatEx(buffer, sizeof(buffer), "%T", "Profile - Completed Maps (PRO)", client);
+	FormatEx(buffer, sizeof(buffer), "%T", "Completed Maps (PRO)", client);
 	menu.AddItem("", buffer);
-	FormatEx(buffer, sizeof(buffer), "%T", "Profile - Uncompleted Maps", client);
+	FormatEx(buffer, sizeof(buffer), "%T", "Uncompleted Maps", client);
 	menu.AddItem("", buffer);
-	FormatEx(buffer, sizeof(buffer), "%T", "Profile - Uncompleted Maps (PRO)", client);
+	FormatEx(buffer, sizeof(buffer), "%T", "Uncompleted Maps (PRO)", client);
 	menu.AddItem("", buffer);
 
 	if (gB_GOKZProfile)
 	{
-		FormatEx(buffer, sizeof(buffer), "%T", "Profile - Global Profile", client);
+		FormatEx(buffer, sizeof(buffer), "%T", "Global Profile", client);
 		menu.AddItem("", buffer);
 	}
 }
@@ -218,22 +218,22 @@ public void DB_TxnSuccess_OpenProfileMapCompletion(Handle db, DataPack datapack,
 		{
 			if (completed)
 			{
-				GOKZ_PrintToChat(client, true, "%t", "Profile - None Completed", alias);
+				GOKZ_PrintToChat(client, true, "%t", "Chat - No Maps Completed", alias);
 			}
 			else
 			{
-				GOKZ_PrintToChat(client, true, "%t", "Profile - All Completed", alias);
+				GOKZ_PrintToChat(client, true, "%t", "Chat - All Maps Completed", alias);
 			}
 		}
 		else
 		{
 			if (completed)
 			{
-				GOKZ_PrintToChat(client, true, "%t", "Profile - None Completed (PRO)", alias);
+				GOKZ_PrintToChat(client, true, "%t", "Chat - No Maps Completed (PRO)", alias);
 			}
 			else
 			{
-				GOKZ_PrintToChat(client, true, "%t", "Profile - All Completed (PRO)", alias);
+				GOKZ_PrintToChat(client, true, "%t", "Chat - All Maps Completed (PRO)", alias);
 			}
 		}
 		ReopenProfileMenu(client);
@@ -246,16 +246,16 @@ public void DB_TxnSuccess_OpenProfileMapCompletion(Handle db, DataPack datapack,
 		if (timeType != TimeType_Pro)
 		{
 			menu.SetTitle("%T\n \n%T\n%T\n ", 
-				"Profile - Completed Maps", client, 
-				"Profile - Player", client, alias,
-				"Profile - Mode (Any)", client);
+				"Completed Maps", client, 
+				"Player - ?", client, alias,
+				"Mode - Any", client);
 		}
 		else
 		{
 			menu.SetTitle("%T\n \n%T\n%T\n ", 
-				"Profile - Completed Maps (PRO)", client, 
-				"Profile - Player", client, alias,
-				"Profile - Mode (Any)", client);
+				"Completed Maps (PRO)", client, 
+				"Player - ?", client, alias,
+				"Mode - Any", client);
 		}
 	}
 	else
@@ -263,16 +263,16 @@ public void DB_TxnSuccess_OpenProfileMapCompletion(Handle db, DataPack datapack,
 		if (timeType != TimeType_Pro)
 		{
 			menu.SetTitle("%T\n \n%T\n%T\n ", 
-				"Profile - Uncompleted Maps", client, 
-				"Profile - Player", client, alias,
-				"Profile - Mode (Any)", client);
+				"Uncompleted Maps", client, 
+				"Player - ?", client, alias,
+				"Mode - Any", client);
 		}
 		else
 		{
 			menu.SetTitle("%T\n \n%T\n%T\n ", 
-				"Profile - Uncompleted Maps (PRO)", client, 
-				"Profile - Player", client, alias,
-				"Profile - Mode (Any)", client);
+				"Uncompleted Maps (PRO)", client, 
+				"Player - ?", client, alias,
+				"Mode - Any", client);
 		}
 	}
 
